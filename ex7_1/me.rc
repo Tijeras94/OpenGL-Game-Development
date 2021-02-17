@@ -1,0 +1,290 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Map"
+    BEGIN
+        MENUITEM "&Details",                    ID_MAP_DETAILS
+    END
+    POPUP "&Layers"
+    BEGIN
+        MENUITEM "&Floor",                      ID_LAYERS_FLOOR, CHECKED
+        MENUITEM "&Ceiling",                    ID_LAYERS_CEILING, CHECKED
+        MENUITEM "&Wall",                       ID_LAYERS_WALL, CHECKED
+        MENUITEM "Entity",                      ID_LAYERS_ENTITY, CHECKED
+        MENUITEM "Item",                        ID_LAYERS_ITEM, CHECKED
+        MENUITEM "Sound",                       ID_LAYERS_SOUND, CHECKED
+        MENUITEM "Light",                       ID_LAYERS_LIGHT, CHECKED
+    END
+    POPUP "&Drawing"
+    BEGIN
+        MENUITEM "&Wireframe",                  ID_DRAWING_WIREFRAME
+        , CHECKED
+        MENUITEM "&Solid",                      ID_DRAWING_SOLID
+    END
+END
+
+IDR_POPUP_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "popup"
+    BEGIN
+        MENUITEM "Move",                        ID_POPUP_MOVE
+        MENUITEM SEPARATOR
+        MENUITEM "Duplicate",                   ID_POPUP_DUPLICATE
+        MENUITEM "Delete",                      ID_POPUP_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Texture",                     ID_POPUP_TEXTURE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAP_DETAILS DIALOG DISCARDABLE  0, 0, 186, 109
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Map Details"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_MAP_DETAILS_NAME,4,12,109,14,ES_AUTOHSCROLL
+    LISTBOX         IDC_MAP_DETAILS_LEVEL_RULES,5,41,109,29,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_MAP_DETAILS_LEVEL_TYPE,6,81,109,76,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Map Name",IDC_STATIC,4,2,36,8
+    LTEXT           "Level Exit Rules",IDC_STATIC,6,32,52,8
+    LTEXT           "Level Type",IDC_STATIC,8,72,36,8
+END
+
+IDD_INSERT_ENTITY DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Entity"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "Type:",IDC_STATIC,5,4,19,8
+    LTEXT           "Health",IDC_STATIC,2,19,22,8
+    EDITTEXT        IDC_INSERT_ENTITY_HEALTH,33,18,47,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Strength",IDC_STATIC,2,33,28,8
+    EDITTEXT        IDC_INSERT_ENTITY_STRENGTH,33,32,47,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Armour",IDC_STATIC,5,48,23,8
+    EDITTEXT        IDC_INSERT_ENTITY_ARMOUR,33,46,47,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    COMBOBOX        IDC_INSERT_ENTITY_TYPE,33,3,48,30,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DM_POSITION DIALOG DISCARDABLE  0, 0, 151, 42
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DeathMatch Position"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,97,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,97,23,50,14
+    COMBOBOX        IDC_DM_POSITION_TYPE,5,15,83,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_INSERT_ITEM DIALOG DISCARDABLE  0, 0, 186, 79
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Item"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    COMBOBOX        IDC_INSERT_ITEM_TYPE,5,13,48,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Item Type",IDC_STATIC,6,3,32,8
+    LTEXT           "Respawn Wait (1 = Respawn, 0 = No)",IDC_STATIC,6,32,121,
+                    8
+    EDITTEXT        IDC_INSERT_ITEM_RESPAWN_WAIT,5,41,40,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Respawn Time (in seconds)",IDC_STATIC,5,57,88,8
+    EDITTEXT        IDC_INSERT_ITEM_RESPAWN_TIME,5,66,40,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_INSERT_SOUND DIALOG DISCARDABLE  0, 0, 186, 45
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Sound"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_INSERTSOUND_FILENAME,15,15,102,14,ES_AUTOHSCROLL
+    LTEXT           "Sound File",IDC_STATIC,17,5,34,8
+END
+
+IDD_INSERT_LIGHT DIALOG DISCARDABLE  0, 0, 186, 81
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Light"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "Angles",IDC_STATIC,9,28,22,8
+    EDITTEXT        IDC_INSERTLIGHT_XA,9,37,25,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_INSERTLIGHT_YA,50,37,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_INSERTLIGHT_ZA,89,37,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "X",IDC_STATIC,0,39,8,8
+    LTEXT           "Y",IDC_STATIC,39,39,8,8
+    LTEXT           "Z",IDC_STATIC,80,39,8,8
+    LTEXT           "Color",IDC_STATIC,10,3,17,8
+    EDITTEXT        IDC_INSERTLIGHT_R,10,13,25,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_INSERTLIGHT_G,50,13,25,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_INSERTLIGHT_B,89,13,25,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "R",IDC_STATIC,0,15,8,8
+    LTEXT           "G",IDC_STATIC,38,15,8,8
+    LTEXT           "B",IDC_STATIC,79,15,8,8
+    LTEXT           "Location",IDC_STATIC,9,52,36,8
+    EDITTEXT        IDC_INSERTLIGHT_X,10,60,25,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_INSERTLIGHT_Y,50,60,25,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_INSERTLIGHT_Z,90,60,25,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,0,62,8,8
+    LTEXT           "Y",IDC_STATIC,40,62,8,8
+    LTEXT           "Z",IDC_STATIC,80,62,8,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAP_DETAILS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_INSERT_ENTITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DM_POSITION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 144
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 35
+    END
+
+    IDD_INSERT_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_INSERT_SOUND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_INSERT_LIGHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
